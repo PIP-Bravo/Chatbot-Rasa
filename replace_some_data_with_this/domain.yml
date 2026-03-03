@@ -1,0 +1,188 @@
+version: "3.1"
+
+intents:
+  - pembuka
+  - penutup
+  - terima_kasih
+  - tanya_cuti_akademik
+  - tanya_legalisir
+  - tanya_proposal_organisasi
+  - tanya_rekomendasi_beasiswa
+  - tanya_irs
+  - tanya_izin_aktif_setelah_cuti
+  - tanya_izin_terlambat_bayar_ukt
+  - tanya_link_form
+  - tanya_waktu_proses
+  - tanya_layanan_akademik
+  - tanya_kontak
+  - tanya_jadwal
+  - nlu_fallback
+
+entities:
+  - layanan
+  - dokumen
+
+slots:
+  layanan:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: layanan
+
+responses:
+  utter_pembuka:
+  - text: "Halo! Saya chatbot layanan akademik FSM. Ada yang bisa saya bantu hari ini?"
+  - text: "Selamat datang! Saya siap membantu Anda dengan informasi layanan akademik."
+  - text: "Hai! Silakan tanyakan tentang layanan akademik yang Anda butuhkan."
+
+  utter_penutup:
+  - text: "Sampai jumpa! Semoga informasi yang diberikan membantu studi Anda."
+  - text: "Terima kasih! Jangan ragu untuk bertanya lagi jika butuh bantuan."
+  - text: "Sampai ketemu lagi! Semoga sukses dengan urusan akademiknya."
+
+  utter_terima_kasih:
+  - text: "Sama-sama! Senang bisa membantu. Ada lagi yang bisa saya bantu?"
+  - text: "Dengan senang hati! Jika ada pertanyaan lain tentang layanan akademik, silakan tanyakan."
+  - text: "Terima kasih kembali! Jangan sungkan bertanya jika butuh informasi lain."
+
+  utter_jawab_cuti_akademik:
+  - text: |
+      Prosedur Cuti Akademik (Maksimal 3 hari kerja):
+
+      1. Unduh, isi, dan tandatangani Form Cuti Akademik, lampirkan persyaratan dan isi online via SIAP
+      2. Minta persetujuan dan tanda tangan Ketua Program Studi
+      3. Serahkan form yang sudah ditandatangani ke Dekan untuk disposisi ke Subbag Akademik dan Kemahasiswaan
+      4. Subbag Akademik memeriksa kelengkapan dan memproses
+      5. Dekan menandatangani Surat Izin Dekan
+      6. Subbag Sumber Daya memberi nomor surat dan mengirimkannya
+      7. Mahasiswa dapat mengambil Surat Izin Dekan di loket akademik
+
+  utter_jawab_legalisir:
+  - text: |
+      Prosedur Legalisir Ijazah dan Transkrip (Maksimal 3 hari kerja):
+
+      1. Serahkan fotokopi ijazah/transkrip/sertifikat beserta aslinya ke Subbag Akademik
+      2. Petugas memeriksa keabsahan dan memberikan cap
+      3. Supervisor memeriksa dan memberi paraf
+      4. Dekan/Wakil Dekan menandatangani
+      5. Petugas memberikan stempel fakultas
+      6. Ambil legalisir dengan membawa aslinya dan tanda tangan di buku pengambilan
+
+  utter_jawab_proposal_organisasi:
+  - text: |
+      Prosedur Pengajuan Proposal Kegiatan Organisasi Mahasiswa (Maksimal 3 hari kerja):
+      1. Serahkan proposal ke petugas kemahasiswaan dan Supervisor Akademik untuk registrasi dan alokasi ruang
+      2. Supervisor meneliti dan memverifikasi proposal, memberikan paraf
+      3. Wakil Dekan mengevaluasi substansi proposal
+      4. Pengesahan oleh Wakil Dekan
+      5. Ambil proposal yang telah disetujui
+
+  utter_jawab_rekomendasi_beasiswa:
+  - text: |
+      Prosedur Pengajuan Rekomendasi Beasiswa (Maksimal 3 hari 45 menit):
+
+      1. Download dan isi formulir Surat Rekomendasi Beasiswa ke Subbag Akademik
+      2. BAK Fakultas meneliti dan memverifikasi
+      3. BAK memberikan paraf dan nomor surat
+      4. Wakil Dekan menandatangani
+      5. Ambil surat di BAK Fakultas dan catat bukti pengambilan
+
+  utter_jawab_irs:
+  - text: |
+      Prosedur Pengisian IRS (Isian Rencana Studi):
+
+      1. Bayar biaya pendidikan di bank yang bekerja sama (BNI, Mandiri, BTN, BRI)
+      2. Lakukan her-registrasi online melalui SIAP
+      3. Isi, perbaiki, atau cetak IRS sementara via SIAP
+      4. Temui Pembimbing Akademik untuk konsultasi mata kuliah
+      5. Pembimbing Akademik melakukan persetujuan online di SIAP
+      6. Cek IRS online di sistem SIAP bila diperlukan
+
+  utter_jawab_izin_aktif_kuliah_setelah_cuti:
+  - text: |
+      Prosedur Izin Aktif Setelah Cuti:
+
+      1. Bawa surat izin cuti akademik semester ke Ketua Program Studi dan Subbag Akademik
+      2. Lakukan registrasi online pada SSO masing-masing
+      3. Mahasiswa terdaftar sebagai Peserta Kuliah/Mahasiswa Aktif
+
+  utter_jawab_izin_terlambat_bayar_ukt:
+  - text: |
+      Prosedur Izin Keterlambatan Pembayaran UKT (Maksimal 3 hari kerja):
+
+      1. Unduh, isi, dan tandatangani Form Permohonan Keterlambatan UKT dengan lampiran
+      2. Minta tanda tangan dosen wali dan persetujuan Ketua Program Studi
+      3. Serahkan form yang sudah ditandatangani ke Supervisor Sumber Daya
+      4. Supervisor memeriksa kelengkapan dan memberikan paraf
+      5. Wakil Dekan Sumber Daya memproses surat permohonan
+      6. Wakil Dekan Sumber Daya menandatangani surat
+      7. Subbag Sumber Daya memproses surat
+      8. Bawa surat ke Wakil Rektor II melalui Manajer Akademik
+      9. Wakil Rektor II mendisposisikan ke Direktorat Keuangan
+      10. Bendahara membuat sistem pembayaran
+      11. Bayar UKT ke bank
+
+  utter_jawab_link_form:
+  - text: |
+      Link Download Formulir:
+
+      Form Cuti Akademik:
+      https://drive.google.com/file/d/1miPHNvRj6XO6LEhFCiC_QXcMtynCPWR2/edit
+
+      Form Rekomendasi Beasiswa:
+      https://drive.google.com/file/d/18f_nbpXHbElgRNoplDFQVNYGGDkFxBTT/view
+
+      Form Keterlambatan Pembayaran UKT:
+      https://drive.google.com/file/d/1o7hogihjZsFTB_V27JU1OfNGBuI2Sr55/
+
+  utter_jawab_waktu_proses:
+  - text: |
+      Waktu Pemrosesan Layanan Akademik:
+
+      Cuti Akademik: Maksimal 3 hari kerja
+      Legalisir: Maksimal 3 hari kerja
+      Proposal Organisasi: Maksimal 3 hari kerja
+      Rekomendasi Beasiswa: Maksimal 3 hari 45 menit
+      Keterlambatan UKT: Maksimal 3 hari kerja
+      Pengisian IRS: Maksimal 3 hari kerja
+      Aktif Setelah Cuti: ±15 menit
+
+  utter_layanan_akademik:
+  - text: |
+      Layanan Akademik yang Tersedia:
+
+      Cuti Akademik
+      Legalisir Ijazah & Transkrip
+      Proposal Kegiatan Organisasi
+      Rekomendasi Beasiswa
+      Pengisian IRS (Isian Rencana Studi)
+      Izin Aktif Setelah Cuti
+      Izin Keterlambatan Bayar UKT
+
+      Silakan pilih layanan yang ingin Anda tanyakan!
+
+  utter_kontak:
+  - text: |
+      Kontak Layanan Akademik FSM:
+
+      Subbag Akademik dan Kemahasiswaan
+      Telepon: (024) 747 4754
+      Email: akademikfsm@live.undip.ac.id
+
+  utter_jadwal:
+  - text: |
+      Informasi Jadwal Layanan:
+
+      Jam Operasional: Senin - Jumat, 08.00 - 16.00 WIB
+      Lokasi: Gedung Acintya Prasada Lt. 1, Fakultas Sains dan Matematika, UNDIP
+      Hari Libur: Mengikuti kalender akademik UNDIP
+
+  utter_diluar_scope:
+  - text: "Maaf, saya belum dapat membantu anda untuk pertanyaan tersebut."
+  - text: "Mohon maaf, saya belum dapat menjawab pertanyaan anda. Silakan hubungi Subbag Akademik langsung."
+  - text: "Saya hanya terbatas pada informasi yang disediakan. Untuk pertanyaan lain, silakan hubungi Subbag Akademik langsung."
+
+session_config:
+  session_expiration_time: 180
+  carry_over_slots_to_new_session: true

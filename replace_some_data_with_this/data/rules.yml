@@ -1,0 +1,82 @@
+version: "3.1"
+
+rules:
+- rule: Sambut salam
+  steps:
+  - intent: pembuka
+  - action: utter_pembuka
+
+- rule: Ucapkan sampai jumpa
+  steps:
+  - intent: penutup
+  - action: utter_penutup
+
+- rule: Ucapkan terima kasih
+  steps:
+  - intent: terima_kasih
+  - action: utter_terima_kasih
+
+- rule: Respon pertanyaan cuti akademik
+  steps:
+  - intent: tanya_cuti_akademik
+  - action: utter_jawab_cuti_akademik
+
+- rule: Respon pertanyaan legalisir
+  steps:
+  - intent: tanya_legalisir
+  - action: utter_jawab_legalisir
+
+- rule: Respon pertanyaan proposal organisasi
+  steps:
+  - intent: tanya_proposal_organisasi
+  - action: utter_jawab_proposal_organisasi
+
+- rule: Respon pertanyaan rekomendasi beasiswa
+  steps:
+  - intent: tanya_rekomendasi_beasiswa
+  - action: utter_jawab_rekomendasi_beasiswa
+
+- rule: Respon pertanyaan IRS
+  steps:
+  - intent: tanya_irs
+  - action: utter_jawab_irs
+
+- rule: Respon pertanyaan izin aktif setelah cuti
+  steps:
+  - intent: tanya_izin_aktif_setelah_cuti
+  - action: utter_jawab_izin_aktif_kuliah_setelah_cuti
+
+- rule: Respon pertanyaan izin terlambat membayar UKT
+  steps:
+  - intent: tanya_izin_terlambat_bayar_ukt
+  - action: utter_jawab_izin_terlambat_bayar_ukt
+
+- rule: Respon pertanyaan link formulir
+  steps:
+  - intent: tanya_link_form
+  - action: utter_jawab_link_form
+
+- rule: Respon pertanyaan lama waktu proses
+  steps:
+  - intent: tanya_waktu_proses
+  - action: utter_jawab_waktu_proses
+
+- rule: Respon pertanyaan layanan akademik
+  steps:
+  - intent: tanya_layanan_akademik
+  - action: utter_layanan_akademik
+
+- rule: Respon pertanyaan kontak
+  steps:
+  - intent: tanya_kontak
+  - action: utter_kontak
+
+- rule: Respon pertanyaan jadwal
+  steps:
+  - intent: tanya_jadwal
+  - action: utter_jadwal
+
+- rule: Respon pertanyaan di luar scope
+  steps:
+  - intent: nlu_fallback
+  - action: utter_diluar_scope
