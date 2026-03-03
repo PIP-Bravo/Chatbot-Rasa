@@ -42,7 +42,7 @@ Disarankan menggunakan environment terpisah agar tidak mengganggu instalasi Pyth
 ## 1️⃣ Buat Virtual Environment (Conda)
 
 ```bash
-conda create -n rasa_fsm_env python=3.8.18
+conda create -n rasa_fsm_env python==3.8.18
 ```
 
 > Disarankan menggunakan Python 3.8.18   untuk kompatibilitas Rasa.
